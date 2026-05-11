@@ -655,27 +655,41 @@ header{
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
-.contact-info{
-  margin-bottom:30px;
-  line-height:2;
-  font-size:18px;
+.contact-container{
+    max-width:700px;
+    margin:auto;
 }
 
-form{
-  width:400px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+.contact-container form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
-input,
-textarea{
-  padding:12px;
-  border:1px solid #ccc;
-  border-radius:5px;
+.contact-container input,
+.contact-container textarea{
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:16px;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus{
+    border:2px solid #38bdf8;
 }
 
 /* =========================
