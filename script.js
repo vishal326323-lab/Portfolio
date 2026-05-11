@@ -48,73 +48,64 @@ function showWebsiteInfo() {
 
 }
 
-// ================= CONTACT FORM =================
+/* CONTACT FORM */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const form = document.getElementById("contact-form");
+    const form = document.getElementById("contact-form");
 
-  form.addEventListener("submit", async function (event) {
+    form.addEventListener("submit", async function (event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
 
-    // VALIDATION
+        // Validation
+        if (name === "" || email === "" || message === "") {
 
-    if (name === "" || email === "" || message === "") {
+            Swal.fire({
+                icon: "warning",
+                title: "Oops...",
+                text: "Please fill all fields!"
+            });
 
-      Swal.fire({
-        icon: "warning",
-        title: "Oops...",
-        text: "Please fill all fields!",
-        confirmButtonColor: "#38bdf8",
-        background: "#0f172a",
-        color: "#ffffff"
-      });
+            return;
+        }
 
-      return;
-    }
+        // Send form data
+        const formData = new FormData(form);
 
-    // SEND FORM DATA
+        try {
 
-    const formData = new FormData(form);
+            await fetch(form.action, {
+                method: "POST",
+                body: formData
+            });
 
-    try {
+            // Success Popup
+            Swal.fire({
+                icon: "success",
+                title: "Message sent successfully!",
+                text: "Thank you for contacting me.",
+                confirmButtonColor: "#38bdf8"
+            });
 
-      await fetch(form.action, {
-        method: "POST",
-        body: formData
-      });
+            // Reset form
+            form.reset();
 
-      // SUCCESS POPUP
+        } catch (error) {
 
-      Swal.fire({
-        icon: "success",
-        title: "Message sent successfully!",
-        text: "Thank you for contacting me.",
-        showConfirmButton: false,
-        timer: 2500,
-        background: "#ffffff",
-        color: "#000000"
-      });
+            Swal.fire({
+                icon: "error",
+                title: "Something went wrong!",
+                text: "Please try again later."
+            });
 
-      form.reset();
+        }
 
-    } catch (error) {
-
-      Swal.fire({
-        icon: "error",
-        title: "Something went wrong!",
-        text: "Please try again later.",
-        confirmButtonColor: "#38bdf8"
-      });
-
-    }
-
-  });
+    });
 
 });
 
