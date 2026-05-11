@@ -114,32 +114,51 @@ header{
     padding:140px 10% 100px;
 }
 
+/* =========================
+   HERO CONTENT
+========================= */
+
 .hero-content{
     flex:1;
 }
 
-.hero-img {
-    position: relative;
+.hero-content h1{
+    font-size:72px;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:15px;
 }
 
-.hero-img img {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 25px 50px -12px rgba(0, 51, 102, 0.25);
-    transition: var(--transition);
-    border: 8px solid var(--white);
+.hero-content h1 span{
+    color:#38bdf8;
+
+    text-shadow:
+    0 0 10px #38bdf8,
+    0 0 30px #38bdf8;
 }
 
-.hero-img:hover img {
-    transform: scale(1.02);
+.hero-content h3{
+    font-size:32px;
+    color:#e2e8f0;
+    margin-bottom:20px;
 }
 
+.hero-content p{
+    color:#94a3b8;
+    line-height:1.8;
+    font-size:18px;
+    max-width:600px;
+    margin-bottom:35px;
+}
 
 /* =========================
    BUTTONS
 ========================= */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
 
 .btn{
     padding:14px 30px;
@@ -189,14 +208,18 @@ header{
 .hero-image img{
 
     width:420px;
-
-    border-radius:30px;
+    height:420px;
 
     object-fit:cover;
 
+    border-radius:50%;
+
+    border:8px solid white;
+
+    background:transparent;
+
     box-shadow:
-    0 0 25px rgba(56,189,248,0.3),
-    0 0 60px rgba(56,189,248,0.15);
+    0 0 25px rgba(56,189,248,0.4);
 
     transition:0.4s ease;
 }
@@ -206,27 +229,7 @@ header{
     transform:scale(1.03);
 
     box-shadow:
-    0 0 35px rgba(56,189,248,0.5),
-    0 0 80px rgba(56,189,248,0.25);
-}
-
-/* =========================
-   FLOAT ANIMATION
-========================= */
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-20px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
+    0 0 45px rgba(56,189,248,0.7);
 }
 
 /* =========================
@@ -510,7 +513,8 @@ footer{
     }
 
     .hero-image img{
-        width:300px;
+        width:320px;
+        height:320px;
     }
 }
 
@@ -547,6 +551,7 @@ footer{
 
     .hero-image img{
         width:260px;
+        height:260px;
     }
 }
 
@@ -562,6 +567,7 @@ footer{
 
     .hero-image img{
         width:220px;
+        height:220px;
     }
 
     .btn{
