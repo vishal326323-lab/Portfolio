@@ -20,16 +20,36 @@ function showWebsiteInfo() {
   );
 }
 
-// Contact Form
-const contactForm = document.getElementById("contact-form");
+/* CONTACT FORM */
+// Just show the popup
+document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("contact-form");
 
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-  alert("Message Sent Successfully!");
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
 
-  contactForm.reset();
-});
+        if (name === "" || email === "" || message === "") {
+          Swal.fire({
+            icon: "warning",
+            title: "Oops...",
+            text: "Please fill all fields!"
+          });
+          return;
+        }
+
+        Swal.fire({
+          icon: "success",
+          title: "Message sent successfully!",
+          showConfirmButton: false,
+          timer: 2000
+        });
+        form.reset();
+      });
+    });
 
 // Scroll Animation
 window.addEventListener("scroll", () => {
