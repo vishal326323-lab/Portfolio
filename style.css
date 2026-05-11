@@ -118,52 +118,24 @@ header{
     flex:1;
 }
 
-.hero-image{
-
-    position:relative;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.hero-img {
+    position: relative;
 }
 
-.hero-image::before{
-
-    content:'';
-
-    position:absolute;
-
-    width:350px;
-    height:450px;
-
-    background:
-    radial-gradient(circle,
-    rgba(56,189,248,0.25),
-    transparent 70%);
-
-    filter:blur(40px);
-
-    z-index:0;
+.hero-img img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 25px 50px -12px rgba(0, 51, 102, 0.25);
+    transition: var(--transition);
+    border: 8px solid var(--white);
 }
 
-.hero-image img{
-
-    position:relative;
-
-    z-index:1;
-
-    width:320px;
-
-    height:auto;
-
-    object-fit:contain;
-
-    background:transparent;
-
-    border:none;
-
-    box-shadow:none;
+.hero-img:hover img {
+    transform: scale(1.02);
 }
+
 
 /* =========================
    BUTTONS
