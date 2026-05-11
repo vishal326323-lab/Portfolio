@@ -302,7 +302,7 @@
         </section>
 
 
-   <!-- ================= CONTACT SECTION ================= -->
+  <!-- ================= CONTACT SECTION ================= -->
 
 <section class="contact section" id="contact">
 
@@ -325,46 +325,49 @@
         <!-- FORM -->
 
         <form
-    id="contact-form"
-    action="https://formsubmit.co/techstdfoody@gmail.com"
-    method="POST"
->
+            id="contact-form"
+            action="https://formsubmit.co/techstdfoody@gmail.com"
+            method="POST"
+        >
 
-    <input type="hidden" name="_captcha" value="false">
+            <!-- Disable captcha -->
+            <input type="hidden" name="_captcha" value="false">
 
-    <input type="hidden" name="_template" value="table">
+            <!-- Email subject -->
+            <input type="hidden" name="_subject" value="New Customer Message!">
 
-    <input type="hidden" name="_subject" value="New Portfolio Message">
+            <!-- Stay on same page -->
+            <input type="hidden" name="_next" value="">
 
-    <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your Name"
-        required
-    >
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
 
-    <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Your Email"
-        required
-    >
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
 
-    <textarea
-        id="message"
-        name="message"
-        rows="6"
-        placeholder="Your Message"
-        required
-    ></textarea>
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+                required
+            ></textarea>
 
-    <button type="submit" class="btn primary-btn">
-        Send Message
-    </button>
+            <button type="submit" class="btn primary-btn">
+                Send Message
+            </button>
 
-</form>
+        </form>
 
     </div>
 
