@@ -100,7 +100,6 @@ header{
 ========================= */
 
 .hero{
-
     min-height:100vh;
 
     display:flex;
@@ -109,50 +108,35 @@ header{
 
     align-items:center;
 
-    gap:80px;
-
     padding:140px 10% 100px;
-}
 
-/* LEFT SIDE */
+    gap:60px;
+}
 
 .hero-content{
     flex:1;
 }
 
-.hero-content h1{
-    font-size:72px;
-    line-height:1.1;
-    margin-bottom:15px;
-}
+.hero-image{
+    flex:1;
 
-.hero-content h1 span{
-    color:#38bdf8;
-
-    text-shadow:
-    0 0 10px #38bdf8,
-    0 0 25px #38bdf8;
-}
-
-.hero-content h3{
-    font-size:32px;
-    color:#cbd5e1;
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    color:#94a3b8;
-    line-height:1.8;
-    font-size:18px;
-    max-width:600px;
-    margin-bottom:35px;
-}
-
-.hero-buttons{
     display:flex;
-    gap:20px;
+
+    justify-content:center;
 }
 
+.hero-image img{
+    width:350px;
+
+    border-radius:25px;
+
+    object-fit:cover;
+
+    box-shadow:
+    0 0 30px rgba(56,189,248,0.35);
+
+    transition:0.4s;
+}
 /* =========================
    BUTTONS
 ========================= */
