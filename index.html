@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishal Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo">
+        <h2>Vishal</h2>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home -->
+  <section class="home section" id="home">
+    <div class="home-container">
+      <h1>Hi, I'm Vishal</h1>
+      <p>A passionate software developer specializing in web development and Java programming.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about section" id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+
+    <div class="about-container">
+      <p>
+        I am a dedicated software developer with a strong foundation in Java and web technologies.
+        My goal is to create efficient, scalable, and user-friendly applications.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects section" id="projects">
+    <div class="section-title">
+      <h2>My Projects</h2>
+    </div>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+        <h3>Student Management System</h3>
+
+        <p>
+          Java-based application with admin login,
+          student registration, update, search,
+          and view operations.
+        </p>
+
+        <ul>
+          <li>✔ Authentication System</li>
+          <li>✔ File Handling</li>
+          <li>✔ CRUD Operations</li>
+          <li>✔ Object Oriented Programming</li>
+        </ul>
+
+        <button class="project-btn" onclick="showProjectInfo()">
+          View Details
+        </button>
+      </div>
+
+      <div class="project-card">
+        <h3>Restaurant Website</h3>
+
+        <p>
+          Responsive food ordering website with menu section,
+          add to cart feature, and contact form.
+        </p>
+
+        <ul>
+          <li>✔ Responsive UI</li>
+          <li>✔ JavaScript Interactions</li>
+          <li>✔ Contact Form</li>
+          <li>✔ Modern Design</li>
+        </ul>
+
+        <button class="project-btn" onclick="showWebsiteInfo()">
+          View Details
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section" id="contact">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+    </div>
+
+    <div class="contact-container">
+      <form id="contact-form">
+        <input type="text" placeholder="Enter Your Name" required>
+        <input type="email" placeholder="Enter Your Email" required>
+        <textarea rows="5" placeholder="Enter Your Message"></textarea>
+
+        <button type="submit" class="btn primary-btn">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Vishal Portfolio | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
