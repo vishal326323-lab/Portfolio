@@ -302,44 +302,45 @@
         </section>
 
 
-    <!-- ================= CONTACT SECTION ================= -->
+    <!-- CONTACT -->
 
-    <section class="contact section" id="contact">
+<section class="contact" id="contact">
 
-        <div class="section-title">
+  <h2>Contact TechStdFOODYRestaurent</h2>
 
-            <h2>Contact Me</h2>
+  <div class="contact-info">
 
-        </div>
+    <p>📞 Phone: +91 94903 26323</p>
 
-        <div class="contact-container">
+    <p>📧 Email: techstdfoody@gmail.com</p>
 
-            <form id="contact-form">
+    <p>📍 Location: Andhra Pradesh, India</p>
 
-                <input type="text"
-                    placeholder="Enter Your Name"
-                    required>
+  </div>
 
-                <input type="email"
-                    placeholder="Enter Your Email"
-                    required>
+  <!-- FORM -->
 
-                <textarea rows="5"
-                    placeholder="Enter Your Message">
-                </textarea>
+  <form
+  id="contact-form"
+  action="https://formsubmit.co/techstdfoody@gmail.com"
+  method="POST"
+>
+  <!-- Disable captcha -->
+  <input type="hidden" name="_captcha" value="false">
 
-                <button type="submit"
-                    class="btn primary-btn">
+  <!-- Email subject -->
+  <input type="hidden" name="_subject" value="New Customer Message!">
 
-                    Send Message
+  <!-- Redirect after submit -->
+  <input type="hidden" name="_next" value="https://vishal326323-lab.github.io/Project2/">
 
-                </button>
+  <input type="text" id="name" name="name" placeholder="Your Name" required>
+  <input type="email" id="email" name="email" placeholder="Your Email" required>
+  <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-            </form>
-
-        </div>
-
-    </section>
+  <button type="submit">Send Message</button>
+</form>
+</section>
 
     <!-- ================= FOOTER ================= -->
 
