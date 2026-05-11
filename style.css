@@ -656,22 +656,50 @@ header{
 
 
 /* =========================
-   CONTACT
+   CONTACT SECTION
 ========================= */
+
+.contact{
+    padding:120px 10%;
+    background:#020617;
+}
 
 .contact-container{
     max-width:700px;
     margin:auto;
+
+    background:rgba(15,23,42,0.9);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 0 25px rgba(56,189,248,0.15);
 }
 
-.contact-container form{
+.contact-info{
+    margin-bottom:30px;
+}
+
+.contact-info p{
+    margin-bottom:15px;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+#contact-form{
     display:flex;
     flex-direction:column;
     gap:20px;
 }
 
-.contact-container input,
-.contact-container textarea{
+#contact-form input,
+#contact-form textarea{
+
+    width:100%;
+
     padding:16px;
 
     border:none;
@@ -685,11 +713,25 @@ header{
     color:white;
 
     font-size:16px;
+
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-.contact-container input:focus,
-.contact-container textarea:focus{
-    border:2px solid #38bdf8;
+#contact-form input:focus,
+#contact-form textarea:focus{
+
+    border:1px solid #38bdf8;
+
+    box-shadow:0 0 15px rgba(56,189,248,0.3);
+}
+
+#contact-form textarea{
+    resize:none;
+}
+
+#contact-form button{
+    width:200px;
+    cursor:pointer;
 }
 
 /* =========================
