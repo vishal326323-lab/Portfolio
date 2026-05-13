@@ -790,40 +790,74 @@ footer{
     }
 }
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
     .navbar{
-        flex-direction:column;
-        height:auto;
-        padding:20px 0;
-        gap:20px;
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .logo{
+        font-size: 30px;
     }
 
     .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a{
+        font-size: 14px;
     }
 
     .hero{
-        padding-top:180px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+
+        padding:
+        170px
+        20px
+        70px;
     }
 
     .hero-content h1{
-        font-size:42px;
+        font-size: 42px;
     }
 
     .hero-content h3{
-        font-size:24px;
+        font-size: 24px;
     }
 
-    .section-title h2{
-        font-size:38px;
+    .hero-content p{
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .btn{
+        padding: 12px 22px;
+        font-size: 15px;
     }
 
     .hero-image img{
-        width:260px;
-        height:260px;
+        width: 240px;
+        height: 240px;
+    }
+
+    .section-title h2{
+        font-size: 36px;
     }
 }
 
