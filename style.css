@@ -119,7 +119,9 @@ header{
 ========================= */
 
 .hero-content{
-    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .hero-content h1{
@@ -792,40 +794,157 @@ footer{
 
 @media (max-width: 768px) {
 
+    /* NAVBAR */
+
     .navbar{
+        width: 100%;
+        padding: 15px 10px;
         flex-direction: column;
+        gap: 12px;
         height: auto;
-        padding: 15px 0;
-        gap: 15px;
     }
 
     .logo{
-        font-size: 30px;
+        font-size: 38px;
     }
 
     .nav-links{
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 14px;
     }
 
     .nav-links a{
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        padding:
+        150px
+        20px
+        80px;
+
+        gap: 35px;
+    }
+
+    .hero-content{
+        width: 100%;
+    }
+
+    .hero-content h1{
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .hero-content h3{
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p{
+        font-size: 18px;
+        line-height: 1.7;
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    /* HERO BUTTONS */
+
+    .hero-buttons{
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .btn{
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+
+    /* HERO IMAGE */
+
+    .hero-image img{
+        width: 280px;
+        height: 280px;
+        border-width: 5px;
+    }
+
+    /* SECTION */
+
+    .section{
+        padding: 90px 20px;
+    }
+
+    .section-title h2{
+        font-size: 42px;
+    }
+
+    /* ABOUT CARD */
+
+    .about-card{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .about-card p{
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card{
+        width: 100%;
+    }
+
+    /* PROJECTS */
+
+    .project-container{
+        grid-template-columns: 1fr;
+    }
+
+    .project-card{
+        width: 100%;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+        width: 100%;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .logo{
+        font-size: 32px;
     }
 
     .hero{
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 40px;
-
         padding:
-        170px
-        20px
+        140px
+        15px
         70px;
     }
 
     .hero-content h1{
-        font-size: 42px;
+        font-size: 38px;
     }
 
     .hero-content h3{
@@ -834,21 +953,6 @@ footer{
 
     .hero-content p{
         font-size: 16px;
-        line-height: 1.7;
-        max-width: 100%;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-
-    .hero-buttons{
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .btn{
-        padding: 12px 22px;
-        font-size: 15px;
     }
 
     .hero-image img{
@@ -856,27 +960,17 @@ footer{
         height: 240px;
     }
 
+    .btn{
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+
+    .hero-buttons{
+        flex-direction: column;
+    }
+
     .section-title h2{
-        font-size: 36px;
+        font-size: 34px;
     }
 }
-
-@media(max-width:500px){
-
-    .hero{
-        padding:160px 6% 100px;
-    }
-
-    .hero-content h1{
-        font-size:34px;
-    }
-
-    .hero-image img{
-        width:220px;
-        height:220px;
-    }
-
-    .btn{
-        padding:12px 20px;
-    }
-}       
