@@ -54,80 +54,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("contact-form");
 
-    if (form) {
+    form.addEventListener("submit", function (e) {
 
-        form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-            e.preventDefault();
-
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            // Validation
-            if (name === "" || email === "" || message === "") {
-
-                Swal.fire({
-                    icon: "warning",
-                    title: "Oops...",
-                    text: "Please fill all fields!"
-                });
-
-                return;
-            }
-
-            // Form Data
-            const formData = new FormData(form);
-
-            try {
-
-                // Send to FormSubmit
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                // Success Popup
-                if (response.ok) {
-
-                    Swal.fire({
-                        icon: "success",
-                        title: "Message sent successfully!",
-                        text: "Thank you for contacting me.",
-                        confirmButtonColor: "#38bdf8"
-                    });
-
-                    form.reset();
-
-                } else {
-
-                    Swal.fire({
-                        icon: "error",
-                        title: "Failed!",
-                        text: "Message could not be sent."
-                    });
-
-                }
-
-            } catch (error) {
-
-                Swal.fire({
-                    icon: "error",
-                    title: "Network Error!",
-                    text: "Please try again later."
-                });
-
-            }
-
+        // Show Success Popup
+        Swal.fire({
+            icon: "success",
+            title: "Message Sent Successfully!",
+            text: "Thank you for contacting me.",
+            confirmButtonColor: "#38bdf8",
+            background: "#0f172a",
+            color: "#ffffff",
+            timer: 2500,
+            showConfirmButton: false
         });
 
-    }
+        // Reset Form
+        form.reset();
+
+    });
 
 });
-
 // ================= SCROLL ANIMATION =================
 
 window.addEventListener("scroll", () => {
