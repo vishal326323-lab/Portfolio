@@ -461,195 +461,295 @@ header{
 
 
 /* Certificates Section */
-.certs-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 1rem 1rem 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary-color) var(--light-gray);
-    -webkit-overflow-scrolling: touch;
+/* =========================
+   CERTIFICATES SECTION
+========================= */
+
+.certs-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
 }
 
-.certs-grid::-webkit-scrollbar {
-    height: 8px;
+.cert-card{
+    width:100%;
+    background:#ffffff;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    overflow:hidden;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+    transition:0.4s ease;
 }
 
-.certs-grid::-webkit-scrollbar-track {
-    background: var(--light-gray);
-    border-radius: 10px;
+.cert-card:hover{
+    transform:translateY(-8px);
 }
 
-.certs-grid::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 10px;
+.cert-thumb-container{
+    width:100%;
+    height:320px;
+
+    background:#fff;
+
+    border:2px solid #D4AF37;
+
+    border-radius:12px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:25px 15px 80px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-.cert-card {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: 320px;
-    flex-shrink: 0;
+/* Top Corner Design */
+
+.cert-thumb-container::after{
+    content:'';
+
+    position:absolute;
+
+    top:-55px;
+    left:-55px;
+
+    width:130px;
+    height:130px;
+
+    background:linear-gradient(135deg,#002D5B 50%,#D4AF37 50%);
+
+    border-radius:50%;
 }
 
-.cert-thumb-container {
-    width: 100%;
-    aspect-ratio: 4/3;
-    min-height: 320px;
-    background: #fff;
-    border: 2px solid #D4AF37;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 3rem 2rem 5rem; 
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+/* Certificate Text */
+
+.cert-header{
+    font-size:26px;
+    font-weight:700;
+    color:#002D5B;
+    letter-spacing:2px;
+    z-index:2;
 }
 
-/* Gold corner curve */
-.cert-thumb-container::after {
-    content: '';
-    position: absolute;
-    top: -60px;
-    left: -60px;
-    width: 140px;
-    height: 140px;
-    background: linear-gradient(135deg, #002D5B 50%, #D4AF37 50%);
-    border-radius: 50%;
-    z-index: 1;
+.cert-subheader{
+    font-size:11px;
+    letter-spacing:3px;
+    color:#D4AF37;
+    margin-bottom:18px;
+    z-index:2;
 }
 
-.cert-header {
-    font-family: 'Times New Roman', serif;
-    font-size: 1.3rem;
-    color: #002D5B;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-    z-index: 2;
-    text-align: center;
+.cert-this-is{
+    font-size:10px;
+    color:#666;
+    margin-bottom:6px;
+    z-index:2;
 }
 
-.cert-subheader {
-    font-size: 0.65rem;
-    color: #D4AF37;
-    letter-spacing: 3px;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    z-index: 2;
-    text-align: center;
+.cert-name{
+    font-size:36px;
+    font-weight:700;
+    color:#002D5B;
+    margin:10px 0;
+    z-index:2;
 }
 
-.cert-this-is {
-    font-size: 0.55rem;
-    color: #666;
-    margin-bottom: 0.3rem;
-    z-index: 2;
-    text-align: center;
+.cert-course-title{
+    font-size:20px;
+    font-weight:700;
+    color:#002D5B;
+    text-align:center;
+    line-height:1.4;
+    z-index:2;
 }
 
-.cert-name {
-    font-family: 'Dancing Script', cursive; /* Using consistent script font */
-    font-size: 2.2rem;
-    color: #002D5B;
-    margin: 0.8rem 0;
-    z-index: 2;
-    text-align: center;
+/* Badge */
+
+.cert-badge{
+    position:absolute;
+
+    left:15px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:70px;
+    height:70px;
+
+    background:#D4AF37;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:3px solid #fff;
+
+    z-index:3;
 }
 
-.cert-course-title {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #002D5B;
-    margin-bottom: 0.8rem;
-    z-index: 2;
-    text-align: center;
-    line-height: 1.2;
+.cert-badge::before,
+.cert-badge::after{
+    content:'';
+
+    position:absolute;
+
+    bottom:-22px;
+
+    width:18px;
+    height:35px;
+
+    background:#002D5B;
+
+    clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);
 }
 
-/* Badge with ribbons */
-.cert-badge {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%) scale(0.9);
-    width: 75px;
-    height: 75px;
-    background: #D4AF37;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-    border: 3px double #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.cert-badge::before{
+    left:10px;
 }
 
-.cert-badge::before, .cert-badge::after {
-    content: '';
-    position: absolute;
-    bottom: -25px;
-    width: 22px;
-    height: 40px;
-    background: #002D5B;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
-    z-index: -1;
+.cert-badge::after{
+    right:10px;
 }
 
-.cert-badge::before { left: 8px; transform: rotate(-15deg); }
-.cert-badge::after { right: 8px; transform: rotate(15deg); }
-
-.cert-badge-text {
-    color: #fff;
-    font-size: 0.45rem;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.1;
+.cert-badge-text{
+    color:#fff;
+    font-size:9px;
+    font-weight:700;
+    text-align:center;
+    line-height:1.2;
 }
 
-.cert-signatures {
-    position: absolute;
-    bottom: 25px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    z-index: 2;
-    padding: 0 2rem;
+/* Signatures */
+
+.cert-signatures{
+    position:absolute;
+
+    bottom:18px;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+    justify-content:space-around;
+
+    padding:0 10px;
 }
 
-.signature-item {
-    text-align: center;
-    flex: 1;
-    max-width: 150px;
+.signature-item{
+    text-align:center;
+    width:45%;
 }
 
-.signature-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.2rem;
-    color: #333;
-    border-bottom: 1px solid #D4AF37;
-    padding-bottom: 2px;
-    margin-bottom: 5px;
+.signature-name{
+    font-size:18px;
+    color:#333;
+
+    border-bottom:1px solid #D4AF37;
+
+    margin-bottom:5px;
+    padding-bottom:3px;
 }
 
-.signature-title {
-    font-size: 0.45rem;
-    color: #777;
-    text-transform: uppercase;
-    font-weight: 700;
+.signature-title{
+    font-size:9px;
+    color:#777;
+    text-transform:uppercase;
 }
 
+/* Certificate Bottom Text */
+
+.cert-card h3{
+    margin-top:15px;
+    font-size:22px;
+    color:#111827;
+}
+
+.cert-card p{
+    color:#374151;
+    margin:8px 0 18px;
+}
+
+.cert-card .btn{
+    display:inline-block;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .certs-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cert-thumb-container{
+        height:300px;
+        padding:20px 10px 70px;
+    }
+
+    .cert-header{
+        font-size:22px;
+    }
+
+    .cert-name{
+        font-size:30px;
+    }
+
+    .cert-course-title{
+        font-size:18px;
+    }
+
+    .signature-name{
+        font-size:15px;
+    }
+}
+
+@media(max-width:500px){
+
+    .cert-thumb-container{
+        height:280px;
+    }
+
+    .cert-header{
+        font-size:20px;
+    }
+
+    .cert-name{
+        font-size:26px;
+    }
+
+    .cert-course-title{
+        font-size:16px;
+    }
+
+    .cert-badge{
+        width:60px;
+        height:60px;
+    }
+
+    .cert-badge-text{
+        font-size:8px;
+    }
+
+    .signature-name{
+        font-size:13px;
+    }
+
+    .signature-title{
+        font-size:8px;
+    }
+}
 
 /* =========================
    CONTACT SECTION
