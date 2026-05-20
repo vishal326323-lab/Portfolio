@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -9,11 +8,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const accountSid = "AC6c7a74015f91b1be2575b0cce703bf3f";
-const authToken = "baa81c5da1da77551187b628f6d46a07";
+// Your Twilio Credentials
+const accountSid = "PASTE_YOUR_CORRECT_ACCOUNT_SID";
+const authToken = "PASTE_YOUR_AUTH_TOKEN";
 
 const client = twilio(accountSid, authToken);
 
+// Route
 app.post("/send-sms", async (req, res) => {
 
     const { name, email, message } = req.body;
@@ -32,11 +33,15 @@ Email: ${email}
 Message:
 ${message}`,
 
+            // Your Twilio Number
             from: "+19068286399",
 
+            // Your Personal Verified Number
             to: "+919490326323"
 
         });
+
+        console.log("SMS Sent Successfully");
 
         res.status(200).json({
             success: true
@@ -44,10 +49,12 @@ ${message}`,
 
     } catch (error) {
 
+        console.log("Twilio Error:");
         console.log(error);
 
         res.status(500).json({
-            success: false
+            success: false,
+            error: error.message
         });
 
     }
