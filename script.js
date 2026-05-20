@@ -54,24 +54,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("contact-form");
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
 
         e.preventDefault();
 
-        // Show Success Popup
-        Swal.fire({
-            icon: "success",
-            title: "Message Sent Successfully!",
-            text: "Thank you for contacting me.",
-            confirmButtonColor: "#38bdf8",
-            background: "#0f172a",
-            color: "#ffffff",
-            timer: 2500,
-            showConfirmButton: false
-        });
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
 
-        // Reset Form
-        form.reset();
+        try {
+
+            const response = await fetch(
+                "http://localhost:5000/send-sms",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        message
+                    })
+                }
+            );
+
+            if (response.ok) {
+
+                Swal.fire({
+
+                    icon: "success",
+
+                    title: "Message Sent Successfully!",
+
+                    text: "Thank you for contacting me.",
+
+                    confirmButtonColor: "#38bdf8",
+
+                    background: "#0f172a",
+
+                    color: "#ffffff",
+
+                    timer: 2500,
+
+                    showConfirmButton: false
+
+                });
+
+                form.reset();
+
+            }
+
+        } catch (error) {
+
+            Swal.fire({
+
+                icon: "error",
+
+                title: "Failed!",
+
+                text: "SMS could not be sent."
+
+            });
+
+        }
 
     });
 
